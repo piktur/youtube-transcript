@@ -1,15 +1,33 @@
 {
-  "name": "youtube-transcript",
-  "version": "1.1.0",
+  "name": "@piktur/youtube-transcript",
+  "version": "1.1.1",
   "description": "Fetch transcript from a youtube video",
+  "author": "Daniel Small <piktur.io@gmail.com>",
+  "packageManager": "yarn@4.1.1",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "publishConfig": {
+    "@piktur:registry": "https://npm.pkg.github.com",
+    "access": "restricted"
+  },
   "main": "dist/youtube-transcript.cjs",
   "module": "dist/youtube-transcript.js",
+  "keywords": [
+    "youtube",
+    "transcript"
+  ],
+  "license": "MIT",
   "type": "module",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "vite build",
-    "test": "vitest"
+    "build": "yarn vite build",
+    "publish": "yarn npm publish --access restricted --tolerate-republish",
+    "test": "yarn vitest"
   },
+  "files": [
+    "dist/*"
+  ],
   "exports": {
     ".": {
       "import": "./dist/youtube-transcript.js",
@@ -17,28 +35,12 @@
       "default": "./dist/youtube-transcript.cjs"
     }
   },
-  "author": "Kakulukian",
-  "keywords": [
-    "youtube",
-    "transcript"
-  ],
-  "license": "MIT",
   "devDependencies": {
+    "node-html-parser": "6.1.13",
     "typescript": "^5.4.4",
     "vite": "^5.2.8",
     "vite-plugin-dts": "^3.8.1",
     "vitest": "^1.4.0"
-  },
-  "files": [
-    "dist/*"
-  ],
-  "repository": "https://github.com/Kakulukian/youtube-transcript.git",
-  "publishConfig": {
-    "access": "public"
-  },
-  "homepage": "https://github.com/Kakulukian/youtube-transcript",
-  "engines": {
-    "node": ">=18.0.0"
   },
   "peerDependencies": {
     "node-html-parser": "6.1.13"
